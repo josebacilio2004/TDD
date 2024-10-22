@@ -15,3 +15,8 @@ class CalculadoraEstadistica:
             raise TypeError("Solo se pueden agregar elementos numéricos.")
         self.elementos.append(elemento)
 
+    def calcular_media(self):
+        if not self.elementos:
+            raise NoSePuedeCalcular("La lista está vacía, no se puede calcular la media.")
+        return sum(self.elementos) / len(self.elementos)
+
