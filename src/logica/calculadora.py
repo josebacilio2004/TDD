@@ -29,4 +29,6 @@ class CalculadoraEstadistica:
         varianza = sum((x - media) ** 2 for x in self.elementos) / len(self.elementos)
         return math.sqrt(varianza)
 
+    def limpiar_elementos(self):
+        self.elementos = []
 
