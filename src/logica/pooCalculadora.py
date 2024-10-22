@@ -1,77 +1,75 @@
-# src/calculator.py
+# src/gui_app.py
 
-import math
+import tkinter as tk
+from tkinter import messagebox
+from src.logica.calculadora import CalculadoraEstadistica, NoSePuedeCalcular
 
-class NoSePuedeCalcular(Exception):
-    """Excepción lanzada cuando no se puede calcular la media o desviación estándar."""
-    pass
 
-class CalculadoraEstadistica:
-    def __init__(self):
-        """
-        Constructor de la clase. Inicializa una lista vacía para almacenar los elementos.
-        """
-        self.elementos = []
+class CalculadoraGUI:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Calculadora de Media y Desviación Estándar")
 
-    def agregar_elemento(self, elemento):
-        """
-        Agrega un elemento a la lista de elementos si es numérico.
-        """
-        if not isinstance(elemento, (int, float)):
-            raise TypeError("Solo se pueden agregar elementos numéricos.")
-        self.elementos.append(elemento)
+        # Instancia de la clase CalculadoraEstadistica
+        self.calculadora = CalculadoraEstadistica()
 
-    def calcular_media(self):
-        """
-        Calcula la media (promedio) de los elementos. Si la lista está vacía, lanza una excepción.
-        """
-        if not self.elementos:
-            raise NoSePuedeCalcular("La lista está vacía, no se puede calcular la media.")
-        return sum(self.elementos) / len(self.elementos)
+        # Crear elementos de la interfaz
+        self.label = tk.Label(root, text="Ingresa un número:")
+        self.label.pack()
 
-    def calcular_desviacion_estandar(self):
-        """
-        Calcula la desviación estándar de los elementos. Si la lista está vacía o tiene un solo
-        elemento, maneja esos casos de forma adecuada.
-        """
-        if not self.elementos:
-            raise NoSePuedeCalcular("La lista está vacía, no se puede calcular la desviación estándar.")
-        if len(self.elementos) == 1:
-            return 0.0  # La desviación estándar de un solo elemento es 0
+        self.entry = tk.Entry(root)
+        self.entry.pack()
 
-        media = self.calcular_media()
-        varianza = sum((x - media) ** 2 for x in self.elementos) / len(self.elementos)
-        return math.sqrt(varianza)
+        self.agregar_btn = tk.Button(root, text="Agregar número", command=self.agregar_numero)
+        self.agregar_btn.pack()
+
+        self.calcular_media_btn = tk.Button(root, text="Calcular Media", command=self.mostrar_media)
+        self.calcular_media_btn.pack()
+
+        self.calcular_desviacion_btn = tk.Button(root, text="Calcular Desviación Estándar",
+                                                 command=self.mostrar_desviacion_estandar)
+        self.calcular_desviacion_btn.pack()
+
+        self.limpiar_btn = tk.Button(root, text="Limpiar elementos", command=self.limpiar_elementos)
+        self.limpiar_btn.pack()
+
+        self.lista_label = tk.Label(root, text="Elementos ingresados:")
+        self.lista_label.pack()
+
+        self.lista_elementos = tk.Listbox(root)
+        self.lista_elementos.pack()
+
+    def agregar_numero(self):
+        try:
+            numero = float(self.entry.get())
+            self.calculadora.agregar_elemento(numero)
+            self.lista_elementos.insert(tk.END, numero)
+            self.entry.delete(0, tk.END)
+        except ValueError:
+            messagebox.showerror("Error", "Por favor, ingresa un número válido.")
+        except TypeError as e:
+            messagebox.showerror("Error", str(e))
+
+    def mostrar_media(self):
+        try:
+            media = self.calculadora.calcular_media()
+            messagebox.showinfo("Resultado", f"La media es: {media}")
+        except NoSePuedeCalcular as e:
+            messagebox.showerror("Error", str(e))
+
+    def mostrar_desviacion_estandar(self):
+        try:
+            desviacion_estandar = self.calculadora.calcular_desviacion_estandar()
+            messagebox.showinfo("Resultado", f"La desviación estándar es: {desviacion_estandar}")
+        except NoSePuedeCalcular as e:
+            messagebox.showerror("Error", str(e))
 
     def limpiar_elementos(self):
-        """
-        Limpia todos los elementos de la lista.
-        """
-        self.elementos = []
+        self.calculadora.limpiar_elementos()
+        self.lista_elementos.delete(0, tk.END)
 
-    def obtener_elementos(self):
-        """
-        Devuelve la lista actual de elementos.
-        """
-        return self.elementos
 
 if __name__ == "__main__":
-    calc = CalculadoraEstadistica()
-
-    while True:
-        try:
-            entrada = input("Ingresa un número (o 'fin' para terminar): ")
-            if entrada.lower() == 'fin':
-                break
-            calc.agregar_elemento(float(entrada))
-        except ValueError:
-            print("Por favor, ingresa un número válido.")
-        except TypeError as e:
-            print(e)
-
-    try:
-        print(f"Elementos: {calc.obtener_elementos()}")
-        print(f"Media: {calc.calcular_media()}")
-        print(f"Desviación estándar: {calc.calcular_desviacion_estandar()}")
-    except NoSePuedeCalcular as e:
-        print(e)
+    root = tk.Tk()
+    app = CalculadoraGUI(root)
+    root.mainloop()
