@@ -32,3 +32,5 @@ class CalculadoraEstadistica:
     def limpiar_elementos(self):
         self.elementos = []
 
+    def obtener_elementos(self):
+        return self.elementos
