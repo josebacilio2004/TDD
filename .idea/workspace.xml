@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff02ffc1-c75c-45b1-a262-45f5cef9d98e" name="Changes" comment="clase Calculadora Estadistica&#10;def obtener elementos">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/pruebaCalculadora.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/pruebaCalculadora.py" afterDir="false" />
-    </list>
+    <list default="true" id="ff02ffc1-c75c-45b1-a262-45f5cef9d98e" name="Changes" comment="codigo_actualizado" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729627334596</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="codigo_actualizado">
+      <option name="closed" value="true" />
+      <created>1729627612824</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729627612824</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -149,14 +154,15 @@
     <MESSAGE value="clase Calculadora Estadistica&#10;def calcular desviacion estandar" />
     <MESSAGE value="clase Calculadora Estadistica&#10;def limpiar elementos" />
     <MESSAGE value="clase Calculadora Estadistica&#10;def obtener elementos" />
-    <option name="LAST_COMMIT_MESSAGE" value="clase Calculadora Estadistica&#10;def obtener elementos" />
+    <MESSAGE value="codigo_actualizado" />
+    <option name="LAST_COMMIT_MESSAGE" value="codigo_actualizado" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tests/pruebaCalculadora.py</url>
-          <line>18</line>
+          <line>5</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
