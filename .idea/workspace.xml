@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff02ffc1-c75c-45b1-a262-45f5cef9d98e" name="Changes" comment="codigo_actualizado">
-      <change afterPath="$PROJECT_DIR$/Tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.coverage" beforeDir="false" afterPath="$PROJECT_DIR$/.coverage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/pruebaCalculadora.py" beforeDir="false" />
+    <list default="true" id="ff02ffc1-c75c-45b1-a262-45f5cef9d98e" name="Changes" comment="codigo_95% coverage">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +50,7 @@
     "Python.calculadora.executor": "Run",
     "Python.pooCalculadora.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "last_opened_file_path": "D:/tddjb/TDDjb"
   },
   "keyToStringList": {
@@ -159,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729627866039</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="codigo_95% coverage">
+      <option name="closed" value="true" />
+      <created>1729742838549</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1729742838549</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -171,7 +175,8 @@
     <MESSAGE value="clase Calculadora Estadistica&#10;def limpiar elementos" />
     <MESSAGE value="clase Calculadora Estadistica&#10;def obtener elementos" />
     <MESSAGE value="codigo_actualizado" />
-    <option name="LAST_COMMIT_MESSAGE" value="codigo_actualizado" />
+    <MESSAGE value="codigo_95% coverage" />
+    <option name="LAST_COMMIT_MESSAGE" value="codigo_95% coverage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -180,11 +185,6 @@
           <url>file://$PROJECT_DIR$/tests/pruebaCalculadora.py</url>
           <line>5</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/logica/calculadora.py</url>
-          <line>4</line>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
